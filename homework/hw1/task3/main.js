@@ -8,6 +8,6 @@ let a = 100;
 let b = '100';
 let c = true;
 
-console.log(a); //number
+console.log(a);  //number
 console.log(b);  //string
 console.log(c);  //boolean
