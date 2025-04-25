@@ -18,4 +18,4 @@ const exchange = (sumUAH, currencyValues, exchangeCurrency) =>{
 
 
 
-console.log(exchange(20000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'EUR'))
+console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'))
