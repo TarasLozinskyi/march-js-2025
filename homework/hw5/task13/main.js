@@ -5,7 +5,7 @@
 // Приклад exchange(10000,[{currency:’USD’,value:25},{currency:’EUR’,value:42}],’USD’) // => 400
 
 
-function exchange(sumUAH, currencyValues, exchangeCurrency) {
+const exchange = (sumUAH, currencyValues, exchangeCurrency) =>{
     let res ='';
     for (const item of currencyValues) {
         if (exchangeCurrency === item.currency) {
