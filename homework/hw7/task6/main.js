@@ -24,11 +24,11 @@ function Car(model, producer, year, maxSpeed, engineVolume) {
     }
 
     this.info = function () {
-        console.log(`model – ${model}`);
-        console.log(`producer – ${producer}`);
-        console.log(`year – ${year}`);
-        console.log(`maxSpeed – ${maxSpeed}`);
-        console.log(`engineVolume – ${engineVolume}`);
+        console.log(`model – ${this.model}`);
+        console.log(`producer – ${this.producer}`);
+        console.log(`year – ${this.year}`);
+        console.log(`maxSpeed – ${this.maxSpeed}`);
+        console.log(`engineVolume – ${this.engineVolume}`);
     }
 
     this.increaseMaxSpeed = function (newSpeed){

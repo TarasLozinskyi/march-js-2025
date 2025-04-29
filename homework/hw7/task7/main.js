@@ -1,46 +1,68 @@
-// #gsKLAsNWM
+// #5kla3yMpgp
 //
-// *Через Array.prototype. створити власний foreach, filter
-const arr = [1,2,3,4,10]
+// – (Те саме, тільки через клас)
+//
+// Створити клас, який дозволяє створювати об’єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об’єм двигуна. додати в об’єкт функції:
+//
+//     — drive () – яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+//
+//     — info () – яка виводить всю інформацію про автомобіль в форматі `назва поля – значення поля`
+//
+//     — increaseMaxSpeed (newSpeed) – яка підвищує значення максимальної швидкості на значення newSpeed
+//
+//     — changeYear (newValue) – змінює рік випуску на значення newValue
+//
+//     — addDriver (driver) – приймає об’єкт, який “водій” з довільним набором полів, і додає його в поточний об’єкт car
 
-Array.prototype.cuForeach = function (callback){
-    for (let i = 0; i < this.length; i++) {
-        console.log(callback(this[i], i, this));
+
+class Car {
+    constructor(model, producer, year, maxSpeed, engineVolume) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
     }
-}
-arr.cuForeach(item => item+2);
 
-
-Array.prototype.cuFilter = function (callback){
-    const res =[];
-    for (let i = 0; i < this.length; i++) {
-        if(callback(this[i], i, this)){
-            res.push(this[i]);
-        }
+    drive() {
+        console.log(`їдемо зі швидкістю ${(this.maxSpeed)} на годину`)
     }
-    return res
-}
 
-console.log(arr.cuFilter(item => item % 2 === 1));
-
-Array.prototype.cuMap = function (callback) {
-   const arr = [];
-    for (let i = 0; i < this.length; i++) {
-        arr.push(callback(this[i], i, this))
+    info() {
+        console.log(`model – ${this.model}`);
+        console.log(`producer – ${this.producer}`);
+        console.log(`year – ${this.year}`);
+        console.log(`maxSpeed – ${this.maxSpeed}`);
+        console.log(`engineVolume – ${this.engineVolume}`);
     }
-    return arr;
-}
 
-console.log(arr.cuMap(item => item + 10));
-
-Array.prototype.cuSome = function (callback){
-    let bool = false;
-    for (let i = 0; i < this.length; i++) {
-        if( callback(this[i], i, this)){
-            bool = callback(this[i], i, this);
-        }
-
+    increaseMaxSpeed(newSpeed) {
+        this.maxSpeed += newSpeed;
     }
-    return bool;
+
+    changeYear(newValue) {
+        this.year = newValue;
+    }
+
+    addDriver(driver) {
+        this.driver = driver;
+    }
+
+
 }
-console.log(arr.cuSome(item => item === 7));
+
+const car = new Car('Mercedes E-Class', 'Mercedes-Benz', 2021, 260, 3.0);
+
+car.drive();
+car.info();
+car.increaseMaxSpeed(50);
+console.log(car.maxSpeed);
+console.log('--------------------------------------')
+
+car.changeYear(2023);
+console.log(car.year);
+console.log('--------------------------------------')
+
+car.addDriver({name: 'Nazar', age: 23});
+console.log(car.driver);
+console.log(car)
