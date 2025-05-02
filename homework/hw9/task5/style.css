@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: sans-serif;
+}
+
+.coursers {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin: 20px;
+    gap: 40px;
+}
+
+.course {
+    padding: 20px;
+    border: 1px solid black;
+
+}
+
+.title {
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.mouth {
+    padding-right: 50px;
+
+}
+
+.list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+
+
