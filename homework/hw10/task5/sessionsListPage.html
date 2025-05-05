@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessionsListPage</title>
+</head>
+<body>
+ <ul class="list"></ul>
+<script >
+    const dateTime = document.getElementsByClassName('list')[0];
+
+    let date = JSON.parse(localStorage.getItem('date') ) || 'Тобі потрібно відвідати index.html і обновити сторінку, потім повертайся сюди!!! '
+    for (const item of date) {
+        const li = document.createElement('li')
+        li.innerText = `${item}`;
+        li.style.listStyleType = 'none'
+        dateTime.appendChild(li);
+    }
+
+</script>
+</body>
+
+</html>
